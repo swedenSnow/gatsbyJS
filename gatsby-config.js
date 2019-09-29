@@ -3,8 +3,10 @@ module.exports = {
         title: `Gatsby Blog`,
         description: `A new Blog`,
         author: `Hani A.Z`,
+        siteUrl: `https://heuristic-northcutt-612183.netlify.com`,
     },
     plugins: [
+        `gatsby-plugin-sitemap`,
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -38,13 +40,9 @@ module.exports = {
                 path: `${__dirname}/src/posts`,
                 name: 'posts',
             },
-            // resolve: 'gatsby-source-filesystem',
-            // options: {
-            //     path: `${__dirname}/src/images`,
-            //     name: 'images',
-            // },
         },
         'gatsby-transformer-remark',
+        `gatsby-plugin-netlify-cms`,
         `gatsby-plugin-netlify`,
     ],
 }
