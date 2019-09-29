@@ -23,22 +23,23 @@ const MainLayout = styled.main`
     grid-gap: 40px;
     padding: 1rem;
 
-    .footer-wrapper {
-        font-size: 0.7rem;
-        font-family: 'Roboto', sans-serif;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        margin-bottom: 2rem;
-        > * {
-            margin-bottom: 0;
-        }
-    }
     @media only screen and (max-width: 500px) {
         grid-gap: 25px;
     }
     @media only screen and (max-width: 400px) {
         grid-template-columns: 1fr;
+    }
+`
+
+const FooterLayout = styled.footer`
+    font-size: 0.7rem;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-bottom: 2rem;
+    > * {
+        margin-bottom: 0;
     }
 `
 
@@ -82,14 +83,13 @@ const Layout = ({ children, location }) => {
                 <MainLayout>
                     <div>{children}</div>
                     <Archive />
-                    <footer class="footer-wrapper">
-                        <p>
-                            © {new Date().getFullYear()} || Built with
-                            hipsteripsum
-                        </p>
-                        <p>By: {data.site.siteMetadata.author}</p>
-                    </footer>
                 </MainLayout>
+                <FooterLayout class="footer-wrapper">
+                    <p>
+                        © {new Date().getFullYear()} || Built with hipsteripsum
+                    </p>
+                    <p>By: {data.site.siteMetadata.author}</p>
+                </FooterLayout>
             </div>
         </>
     )
