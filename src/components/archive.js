@@ -14,6 +14,19 @@ const ArchiveList = styled.ul`
         font-size: 0.8rem;
         text-decoration: underline;
         color: #476263;
+        @media only screen and (max-width: 768px) {
+            font-size: 1rem;
+            color: #d6b76b;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        padding: 0 1rem;
+    }
+`
+
+const ArchiveHeader = styled.h3`
+    @media only screen and (max-width: 400px) {
+        padding: 0 1rem;
     }
 `
 
@@ -40,8 +53,8 @@ const Archive = () => {
 
     return (
         <>
-            <aside style={{ padding: '1rem' }}>
-                <h3>Archive</h3>
+            <aside>
+                <ArchiveHeader>Archive</ArchiveHeader>
                 {data.allMarkdownRemark.edges.map((edge, key) => (
                     <ArchiveList key={edge.node.frontmatter.slug}>
                         <li key={edge.node.frontmatter.slug}>

@@ -21,6 +21,7 @@ const MainLayout = styled.main`
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 40px;
+    padding: 1rem;
 
     .footer-wrapper {
         font-size: 0.7rem;
@@ -28,9 +29,16 @@ const MainLayout = styled.main`
         display: flex;
         flex-flow: column wrap;
         align-items: center;
+        margin-bottom: 2rem;
         > * {
             margin-bottom: 0;
         }
+    }
+    @media only screen and (max-width: 500px) {
+        grid-gap: 25px;
+    }
+    @media only screen and (max-width: 400px) {
+        grid-template-columns: 1fr;
     }
 `
 

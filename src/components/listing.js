@@ -24,6 +24,10 @@ const Post = styled.article`
         font-size: 0.8rem;
         text-decoration: underline;
         color: #476263;
+        @media only screen and (max-width: 768px) {
+            font-size: 1rem;
+            color: #d6b76b;
+        }
     }
 `
 

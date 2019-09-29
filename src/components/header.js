@@ -15,6 +15,15 @@ const HeaderContainer = styled.div`
     padding: 0.4rem;
     img {
         margin-bottom: 0;
+        height: 130px;
+    }
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        background-color: #d6b76b;
+        img {
+            height: 250px;
+        }
     }
 `
 
@@ -29,13 +38,7 @@ const Header = ({ siteTitle }) => (
                         textDecoration: `none`,
                     }}
                 >
-                    <img
-                        style={{
-                            height: '150px',
-                        }}
-                        src={logo}
-                        alt="LU Logo"
-                    />
+                    <img src={logo} alt="LU Logo" />
                 </Link>
             </h1>
         </HeaderContainer>
