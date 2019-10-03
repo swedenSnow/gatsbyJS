@@ -22,7 +22,7 @@ const HeaderContainer = styled.div`
         justify-content: center;
         background-color: #d6b76b;
         img {
-            height: 250px;
+            height: 170px;
         }
     }
 `

@@ -13,6 +13,7 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Header from './header'
 import Archive from './archive'
+import Footer from './footer'
 import './layout.css'
 
 const MainLayout = styled.main`
@@ -28,18 +29,6 @@ const MainLayout = styled.main`
     }
     @media only screen and (max-width: 400px) {
         grid-template-columns: 1fr;
-    }
-`
-
-const FooterLayout = styled.footer`
-    font-size: 0.7rem;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    margin-bottom: 2rem;
-    > * {
-        margin-bottom: 0;
     }
 `
 
@@ -79,18 +68,12 @@ const Layout = ({ children, location }) => {
             {location.pathname === '/' && (
                 <Img fluid={data.file.childImageSharp.fluid} />
             )}
-            <div>
-                <MainLayout>
-                    <div>{children}</div>
-                    <Archive />
-                </MainLayout>
-                <FooterLayout class="footer-wrapper">
-                    <p>
-                        © {new Date().getFullYear()} || Built with hipsteripsum
-                    </p>
-                    <p>By: {data.site.siteMetadata.author}</p>
-                </FooterLayout>
-            </div>
+
+            <MainLayout>
+                <div>{children}</div>
+                <Archive />
+            </MainLayout>
+            <Footer />
         </>
     )
 }
