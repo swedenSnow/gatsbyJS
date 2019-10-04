@@ -72,8 +72,8 @@ const Layout = ({ children, location }) => {
             <MainLayout>
                 <div>{children}</div>
                 <Archive />
-                <Footer />
             </MainLayout>
+            <Footer />
         </>
     )
 }

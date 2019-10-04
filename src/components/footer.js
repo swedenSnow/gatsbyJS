@@ -40,7 +40,7 @@ const Footer = () => {
     `)
     return (
         <>
-            <FooterLayout class="footer-wrapper">
+            <FooterLayout>
                 <p> {new Date().getFullYear()} || Built with hipsteripsum</p>
                 <p>By: {data.site.siteMetadata.author} &copy;</p>
             </FooterLayout>
